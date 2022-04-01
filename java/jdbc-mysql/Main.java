@@ -5,7 +5,7 @@ import java.sql.*;
 public class Main {
     static final String DB_URL = "jdbc:mysql://grepp.cpjgktk35rty.ap-northeast-2.rds.amazonaws.com:3306/test";
     static final String USER = "guest";
-    static final String PASS = "";   # 패스워드는 비디오 강의 참고해서 입력해주세요
+    static final String PASS = "";   // 패스워드는 비디오 강의 참고해서 입력해주세요
 
     public static void printResultSet(ResultSet resultSet) throws SQLException {
         // Ensure we start with first row
@@ -35,16 +35,16 @@ public class Main {
                     ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_UPDATABLE);
 
-            // INSERT a row into Employees table
+            // INSERT a row into your table
             System.out.println("Inserting one row...");
-            statement.executeUpdate("INSERT INTO moosong_name_gender VALUES ('Ben', 'Male');");
+            statement.executeUpdate("INSERT INTO table VALUES ('Ben', 'Male');");  // table을 상황에 맞게 수정해주세요.
 
             // Commit data here.
             System.out.println("Committing data here...");
             connection.commit();
 
             // Now list all the available records.
-            String sql = "SELECT * FROM moosong_name_gender;";
+            String sql = "SELECT * FROM table;";      // table을 상황에 맞게 수정해주세요.
             ResultSet resultSet = statement.executeQuery(sql);
             printResultSet(resultSet);
 
